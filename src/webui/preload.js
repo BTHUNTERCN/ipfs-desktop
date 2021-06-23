@@ -10,9 +10,11 @@ const urlParams = new URLSearchParams(window.location.search)
 
 function checkIfVisible () {
   if (document.hidden) {
+    if (window.location.hash === '#/blank') return // skip, already blank
     previousHash = window.location.hash
     window.location.hash = '/blank'
   } else {
+    if (previousHash === '#/blank') return // skip
     window.location.hash = previousHash
   }
 }

@@ -110,7 +110,6 @@ module.exports = async function (ctx) {
       window.webContents.send('updatedPage', path)
       url.hash = path
     }
-
     if (focus) {
       window.show()
       window.focus()
